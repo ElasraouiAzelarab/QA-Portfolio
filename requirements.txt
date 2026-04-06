@@ -1,0 +1,6 @@
+pytest==8.2.2
+requests==2.32.3
+selenium==4.21.0
+locust==2.29.1
+flake8==7.1.0
+pytest-html==4.1.1
