@@ -10,6 +10,8 @@ jobs:
   api-tests:
     name: API Tests (pytest)
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
@@ -40,6 +42,8 @@ jobs:
   lint:
     name: Lint (flake8)
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
