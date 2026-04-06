@@ -2,7 +2,6 @@
 Selenium tests — Login page
 Tests covering TC-LOGIN-001 through TC-LOGIN-006.
 """
-import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC

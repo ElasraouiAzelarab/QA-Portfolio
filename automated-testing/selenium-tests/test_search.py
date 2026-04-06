@@ -2,7 +2,6 @@
 Selenium tests — Product search
 Tests covering product search and results filtering.
 """
-import pytest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
@@ -39,7 +38,9 @@ class TestProductSearch:
         search_input.send_keys(Keys.RETURN)
 
         no_results = WebDriverWait(driver, 10).until(
-            EC.visibility_of_element_located((By.CSS_SELECTOR, "[data-testid='no-results-message']"))
+            EC.visibility_of_element_located(
+                (By.CSS_SELECTOR, "[data-testid='no-results-message']")
+            )
         )
         assert no_results.is_displayed()
 
@@ -47,7 +48,9 @@ class TestProductSearch:
         """Selecting a category filter narrows down results."""
         driver = logged_in_driver
         driver.get(f"{BASE_URL}/products")
-        category_filter = driver.find_element(By.CSS_SELECTOR, "[data-testid='category-electronics']")
+        category_filter = driver.find_element(
+            By.CSS_SELECTOR, "[data-testid='category-electronics']"
+        )
         category_filter.click()
 
         WebDriverWait(driver, 10).until(
@@ -69,4 +72,6 @@ class TestProductSearch:
 
         WebDriverWait(driver, 10).until(EC.url_contains("/products/"))
         assert "/products/" in driver.current_url
-        assert driver.find_element(By.CSS_SELECTOR, "[data-testid='add-to-cart-button']").is_displayed()
+        assert driver.find_element(
+            By.CSS_SELECTOR, "[data-testid='add-to-cart-button']"
+        ).is_displayed()

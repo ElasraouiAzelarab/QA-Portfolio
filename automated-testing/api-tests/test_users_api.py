@@ -2,9 +2,6 @@
 API tests — Users endpoint
 Tests against https://jsonplaceholder.typicode.com/users
 """
-import pytest
-
-
 USERS_ENDPOINT = "/users"
 
 
