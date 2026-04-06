@@ -1,0 +1,37 @@
+{
+  "name": "qa-portfolio",
+  "version": "1.0.0",
+  "description": "QA Portfolio — demo calculator app with unit, API, and E2E tests",
+  "main": "src/calculator.js",
+  "scripts": {
+    "test": "npm run test:unit && npm run test:api",
+    "test:unit": "jest tests/unit --coverage",
+    "test:api": "jest tests/api --testTimeout=15000",
+    "test:e2e": "playwright test",
+    "test:all": "npm run test:unit && npm run test:api && npm run test:e2e"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/calculator.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElasraouiAzelarab/QA-Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ElasraouiAzelarab/QA-Portfolio/issues"
+  },
+  "homepage": "https://github.com/ElasraouiAzelarab/QA-Portfolio#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.59.1",
+    "axios": "^1.14.0",
+    "jest": "^30.3.0"
+  }
+}
